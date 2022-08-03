@@ -33,4 +33,14 @@ public class EmailController {
 			throws MessagingException, IOException {
 		return serviceCoordinator.sendEmail(httpServletRequest, reqBody);
 	}
+	
+	@RequestMapping(value = "/test-api/", method = RequestMethod.GET)
+	public String testApi() {
+		return "Without Jwt";
+	}
+	
+	@RequestMapping(value = "/jwt-api/", method = RequestMethod.GET)
+	public String jwtApi() {
+		return "With Jwt";
+	}
 }
